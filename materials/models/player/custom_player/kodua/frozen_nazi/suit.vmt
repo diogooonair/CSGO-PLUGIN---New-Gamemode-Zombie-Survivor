@@ -1,0 +1,23 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\player\custom_player\kodua\frozen_nazi\suit"
+	"$BasemapAlphaPhongMask" "1"
+
+	"$phong" "1"
+	"$phongexponenttexture" "models\player\custom_player\kodua\frozen_nazi\suit_s"
+	"$phongboost" "1"
+	"$phongfresnelranges" "[.05 .5 1]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "33"
+	"$rimlightboost" "1"
+	"$rimmask" "1"
+
+	"$detail" "models/player/custom_player/kodua/shared/detail_cloth4"
+	"$detailscale" "22"
+	"$detailblendfactor" ".5"
+	"$detailblendmode" "0"
+
+	"$halflambert" "1"
+	"$model" "1"
+}

@@ -1,0 +1,21 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\player\custom_player\kodua\frozen_nazi\suit"
+	"$BasemapAlphaPhongMask" "1"
+
+	"$phong" "1"
+	"$phongexponenttexture" "models\player\custom_player\kodua\frozen_nazi\suit_s"
+	"$phongboost" "1"
+	"$phongfresnelranges" "[1 10 1]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "33"
+	"$rimlightboost" "5"
+	"$rimmask" "1"
+
+	"$envmap" "env_cubemap" 
+	"$envmaptint" "[0.1 0.1 0.1]"
+
+	"$halflambert" "1"
+	"$model" "1"
+}

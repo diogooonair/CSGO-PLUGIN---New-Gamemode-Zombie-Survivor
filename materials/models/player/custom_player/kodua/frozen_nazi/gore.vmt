@@ -1,0 +1,24 @@
+VertexLitGeneric
+{
+	"$basetexture"	"models/player/custom_player/kodua/shared/meat"
+	"$bumpmap" "models/player/custom_player/kodua/shared/meat_n"
+
+	"$color" "{200 255 200}"
+
+	"$phong" "1"
+	"$phongexponenttexture" "models/player/custom_player/kodua/shared/meat_s"
+	"$phongboost" ".5"
+	"$phongfresnelranges" "[4 5 6]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "6"
+	"$rimlightboost" ".5"
+	"$rimmask" "1"
+
+	"$envmap" "env_cubemap" 
+	"$envmaptint" "[.01 .01 .01]"
+	"$envmapfresnel" "1.0"
+
+	"$halflambert" "1"
+	"$model" "1"
+}
