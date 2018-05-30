@@ -28,4 +28,4 @@ If you have ideas for updates send me message in steam
 If you found bugs send me message in steam
 If you found maps to that gamemode send me message in steam
 If You Have Plugin Ideas Send Me Message In Steam
-Steam Profile url - www.steamcommunity.com/id/diogo218dv
+Mine Steam Profile url - www.steamcommunity.com/id/diogo218dv
