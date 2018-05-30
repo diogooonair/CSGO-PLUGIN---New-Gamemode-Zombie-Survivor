@@ -5,6 +5,7 @@
 #include <clientprefs>
 #include <colors_csgo>
 #include <addicted>
+#include <smlib>
 
 #pragma semicolon 1
 
@@ -145,8 +146,33 @@ public OnConVarChange(Handle:hCvar, const String:oldValue[], const String:newVal
 
 public Action PlayerSpawn(Event event, const char[] name, bool dontBroadcast)
 {
-    int client = GetClientOfUserId(event.GetInt("userid"));
-    if (RevivedAsZombie[client])
+	int client = GetClientOfUserId(event.GetInt("userid"));
+    int Pikachus = 0;
+    int AlivePlayers = GetAliveCount();
+
+    for (int i = 1; i <= MaxClients; i++)
+    {
+        if (IsClientInGame(i))
+        {
+            if (RevivedAsZombie[i])
+            {
+                Pikachus += 1;
+            }
+        }
+    }
+
+    if(Pikachus == AlivePlayers)
+    {
+        CS_TerminateRound(0.5, CSRoundEnd_CTWin, true);
+        return Plugin_Handled;
+    }
+
+    if (Team_GetClientCount(CS_TEAM_CT) == 0)
+	{
+        CS_TerminateRound(0.5, CSRoundEnd_TerroristWin, true); 
+    }
+	
+	if (RevivedAsZombie[client])
     {
         SetEntityModel(client, ZombieModel);
 		SetEntPropString (client, Prop_Send, "m_szArmsModel", "models/player/custom_player/kodua/frozen_nazi/arms.mdl");
@@ -176,6 +202,11 @@ public Action PlayerDeath(Event event, const char[] name, bool dontBroadcast)
     {
         ChangeClientTeam(client, CS_TEAM_T);
 	}
+	
+	if (Team_GetClientCount(CS_TEAM_CT) == 0)
+    {
+        CS_TerminateRound(0.5, CSRoundEnd_TerroristWin, true); 
+    }
 }
 
 public Action RoundEnd(Event event, const char[] name, bool dontBroadcast)
@@ -604,3 +635,16 @@ stock void SetClientPendingTeam(int client, int iTeam)
 {
 	SetEntProp(client, Prop_Send, "m_iPendingTeamNum", iTeam);
 }
+
+stock int GetAliveCount()
+{
+    int count;
+    for(int i = 1; i <= MaxClients; i++)
+    {
+        if(IsValidClient(i) && IsPlayerAlive(i) && GetClientTeam(i) == CS_TEAM_T)
+        {
+            count++;
+        }
+    }
+    return count;
+}  
